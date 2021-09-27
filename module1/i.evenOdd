@@ -1,0 +1,17 @@
+class Geeks {
+    // 
+	 static void evenOdd (int a,int b) 
+	 {
+		//Your code here
+		if(a%2==0)
+		    System.out.println(a);
+		else
+    System.out.println(b);
+        if(a%2==1)
+    System.out.println(a);
+        else
+    System.out.println(b);
+   // System.out.println(!e);
+	     
+	 }
+}
