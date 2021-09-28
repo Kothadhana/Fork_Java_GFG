@@ -1,0 +1,33 @@
+class Geeks{
+    
+    static void follPatt(String s)
+    {
+        
+        int turn=0;
+        int count=0;
+       // char curr=s.charAt(0);
+        int valid=1;
+        for(int i=0;i<s.length();i++)
+        {
+            char curr=s.charAt(i);
+            if((curr=='x' && turn==1) || (curr=='y' && count<=0))
+            {
+                valid=0;
+                break;
+            }
+            if(curr=='y' && turn==0)
+                turn=1;
+            if(curr=='x')
+                count++;
+            else if(curr=='y')
+                count--;
+            if(count==0)
+                turn=(turn+1)%2;
+                
+        }
+        if(count!=0)
+            valid=0;
+        System.out.print(valid);
+        System.out.println();
+    }
+}
