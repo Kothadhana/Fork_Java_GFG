@@ -1,0 +1,25 @@
+class Geeks{
+    
+    static int sumSub(int arr[],int i,int sum,int n)
+    {
+        int count=0;
+        if(sum>0 && sum%2==0)
+            count++;
+        for(int j=i+1;j<n;j++)
+        {
+            count+=sumSub(arr,j,sum+arr[j],n);
+        }
+        return count;
+    }
+    static int countSumSubsets(int arr[],int n)
+    {
+        
+        //Your code here
+        int count=0;
+        for(int i=0;i<n;i++)
+        {
+            count+=sumSub(arr,i,arr[i],n);
+        }
+        return count;
+    }
+}
