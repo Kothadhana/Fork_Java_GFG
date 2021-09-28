@@ -1,0 +1,24 @@
+class Geeks{
+    static void countSpecials(int a[], int n, int k){
+        int f = (int)Math.floor(n/k);
+        Map<Integer,Integer> m=new HashMap<Integer,Integer>();
+        for(int i=0;i<n;i++)
+        {
+            if(m.containsKey(a[i]))
+            {
+                int x=m.get(a[i]);
+                m.put(a[i],x+1);
+            }
+            else
+                m.put(a[i],1);
+            
+        }
+        int count=0;
+        for(Map.Entry<Integer,Integer> me: m.entrySet())
+        {
+            if(me.getValue()==f)
+                count++;
+        }
+        System.out.println(count);
+    }
+}
